@@ -21,13 +21,12 @@ class RewardeAds(val context: Context, val viewModel: QuestionsViewModel) {
     private var isLoaded = false
 
     // Define your Unity Ads Game ID
-    private val gameId = "5670151" // Replace with your actual Unity Game ID
     private val adUnitId = "Rewarded_Android" // Replace with your Unity Ads placement ID
     private val testMode = true // Set to false for production
 
     init {
         // Initialize Unity Ads
-        UnityAds.initialize(context, gameId,  object : IUnityAdsInitializationListener {
+        UnityAds.initialize(context,  object : IUnityAdsInitializationListener {
             override fun onInitializationComplete() {
                 Log.d("UnityAds", "Unity Ads initialization complete")
                 loadRewardedAd()
